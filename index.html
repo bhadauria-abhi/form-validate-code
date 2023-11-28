@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation </title>
+    <style>
+        body {
+            background-color: rgb(36, 11, 60);
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+
+        }
+
+        #form-container {
+            background-color: #969bd6;
+            padding: 50px;
+            text-align: left;
+        }
+
+        h2 {
+            margin: 0px 0px 10px 0px;
+
+        }
+
+        input {
+            width: 200px;
+            margin: 10px 0;
+            padding: 10PX;
+        }
+
+        input[type="submit"] {
+            width: 222px;
+            background-color: rgb(36, 11, 60);
+            border: 0px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form-container">
+        <h2>login</h2>
+        <form action="/home.html" onsubmit=" return validateform()">
+            <input type="text" placeholder="username" id="username"><br>
+            <p id="userError" class="error"></p>
+
+            <input type="password" placeholder="password" id="password"><br>
+            <p id="passError" class="error"></p>
+            <input type="submit">;
+        </form>
+        <input type="datetime-local">
+    </div>
+    </form>
+
+
+
+
+
+    <script>
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let pass = 1;
+
+
+        function validateform() {
+            if (username.value == "") {
+                document.getElementById("userError").innerHTML = "*user Name is empty!";
+                pass = 0;
+
+            } else if (username.value.length < 4) {
+                document.getElementById("userError").innerHTML = "*user Name require min 4 character!";
+                pass = 0;
+            } else {
+                document.getElementById("userError").innerHTML = "";
+                pass = 1;
+            }
+            if (password.value == "") {
+                document.getElementById("passError").innerHTML = "*Password is empty!";
+                pass = 0;
+
+            } else if (password.value.length < 6) {
+                document.getElementById("passError").innerHTML = "Password must be atleast 6 characters!";
+                pass = 0;
+            }
+
+            else {
+                document.getElementById("passError").innerHTML = "";
+                pass = 0;
+                
+            }
+            if (pass) {
+                return true;
+            } else {
+                return false;
+            }
+            return false;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
